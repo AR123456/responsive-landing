@@ -1,18 +1,21 @@
+//main game logic and app starter 
+
 //required packages 
 var inquirer = require('inquirer');
 var prompt = require('prompt');
 var fs = require("fs");
-var Words = require("./words.js");
-var Letters = require("./letters.js");
+var Word = require("./word.js");
+var Letter = require("./letter.js");
+var Game = require("./game.js");
 //variables 
-var wordList = ["red","blue","green","yellow","orange","purple","teal","pink"];
+
 var currentWord = ""; // for each letter here create a corresponding blank in the uncerscore array
 var wordLetters= []; //holds the  letters from the word picked
 var numBlanks =0; //number of letters in word
 var underscoreWord = []; //where blanks will be to be replaced with correct guesses 
-
-Words();
-Letters();
+//test linkage 
+Word();
+Letter();
 
 
 //1. The completed game should be able to receive user input using the `inquirer` or `prompt` npm packages.
