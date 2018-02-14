@@ -86,7 +86,9 @@ var lettersDisplay = function(word, matchingLetters){
     // Remove first/last space and console log
     this.displayText = shown.trim();
     //put the display text into the console
+    console.log(' ');
     console.log(this.displayText);
+    console.log(' ');
     // Check to see if the game was won (user display equals the word; ie no '_' marks)
     if(this.displayText == this.playWord){
       this.winner = true;
@@ -99,7 +101,7 @@ var lettersDisplay = function(word, matchingLetters){
 
 ///start of game prompt 
 inquirer.prompt([
-  {
+   {
     type: "list",
     name: "wanaPlay",
     message: "Would you like to play a game?",
@@ -177,17 +179,21 @@ function promptUser(){
             console.log('\x1b[36m%s\x1b[0m','Guesses Left: ' + game.guessesLeft);
             console.log(' ');
             console.log('\x1b[36m%s\x1b[0m','Letters already guessed: ' + badGuess); console.log(' ');
-            
+
             promptUser();
           }
         }
        // promps User and decrement guesses
         else{
-          console.log('\x1b[31m%s\x1b[0m', 'That letter is not in the word');
+          console.log(' ');
+          console.log('\x1b[31m%s\x1b[0m', 'That letter is not in the word');console.log(' ');
           game.guessesLeft--;
           underscoreWord.setDisplay();
+          console.log(' ');
           console.log('\x1b[36m%s\x1b[0m','Guesses Left: ' + game.guessesLeft);
+          console.log(' ');
           console.log('\x1b[36m%s\x1b[0m','Letters already guessed: ' + badGuess);
+          console.log(' ');
           promptUser();
         }
      }
@@ -195,7 +201,9 @@ function promptUser(){
   }
   // game over loss 
   else{
+    console.log(' ');
      console.log('\x1b[31m%s\x1b[0m', 'You lost! The correct word was: '+ game.currentWord );
+     console.log(' ');
   }
 }
 
