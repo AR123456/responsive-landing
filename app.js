@@ -6,7 +6,7 @@ var fs = require("fs");
 // var Game = require("./game.js");
 // var Word = require('./word.js');
 
-var wordArray =["red","blue","green","yellow","orange","purple","teal","pink"];
+var wordArray = ["amygdala","cortex ","sagittal","chiasm ","gyrus","nerve","brain","horn","cell","occipital","axon","atlas","ataxia","dendrite","diplopia","babinski","medulla","vertigo","uncus","glia","dendrite","proprioception","neuron"];
 var badGuess = [];
 var matchingLetters = [];      
 var underscoreWord;
@@ -33,14 +33,19 @@ var game = {
     var i = Math.floor(Math.random() * this.wordArray.length);
     this.currentWord = this.wordArray[i];
     //show word for testing 
-    // console.log(this.currentWord);
+    
+    console.log("  " );
+    console.log('\x1b[34m%s\x1b[0m',"**Help with word for testing:    " +this.currentWord); 
+    console.log("________________________________________" );
+    console.log("  " );
+    
         //Display start game 
-    console.log("Its time to play neuro anatomy Hangman, guess a letter");
+    console.log('\x1b[33m%s\x1b[0m',"Its time to play neuro anatomy Hangman, guess a letter");
     // make the underscore word object.
     underscoreWord = new lettersDisplay(this.currentWord);
     //send underscoreWord object to setDispaly functon 
     underscoreWord.setDisplay();
-    console.log("You have " + game.guessesLeft+" guesses left");
+    console.log('\x1b[36m%s\x1b[0m',"You have " + game.guessesLeft+" guesses left");
     // prompt for a letter
     promptUser();
   }
@@ -97,7 +102,7 @@ inquirer.prompt([
   {
     type: "list",
     name: "wanaPlay",
-    message: "Would you like to play hangman?",
+    message: "Would you like to play a game?",
     choices: [
       "yes",
       "no"
@@ -113,6 +118,7 @@ inquirer.prompt([
       break;
 
     case "no":
+    console.log('\x1b[36m%s\x1b[0m', 'The only way to win is not to play');  
          break;
   }
 });
@@ -121,8 +127,8 @@ inquirer.prompt([
 
 //prompt user function 
 function promptUser(){
-  // Always make a gap between inputs
-  // console.log(' ');
+  //put  gap between inputs
+  console.log(' ');
   //  prompt for new letter
   if(game.guessesLeft > 0){
     inquirer.prompt([
@@ -134,20 +140,11 @@ function promptUser(){
     ]).then(function(userInput){
       // get guess
       var letterGuessed = userInput.letter.toLowerCase();
-      // check input against alphabet array
-      // if(alphabet.indexOf(letterGuessed) == -1){
-      //   // if not letter
-      //   console.log( + letterGuessed + "  is not a letter, please try again.");
-      //   console.log('Guesses Left: ' + game.guessesLeft);
-      //   console.log('Letters already guessed: ' + badGuess);
-      //   promptUser();
-      // }
-      // else 
-      if(badGuess.indexOf(letterGuessed) != -1){
+        if(badGuess.indexOf(letterGuessed) != -1){
         // if a repeat letter
-        console.log("You already guessed "+ letterGuessed + " . Try again!");
-        console.log('Guesses Left: ' + game.guessesLeft);
-        console.log("Wrong guesses " + badGuess);
+        console.log('\x1b[31m%s\x1b[0m', 'You already guessed "+ letterGuessed + " . Try again!');
+        console.log('\x1b[36m%s\x1b[0m', 'Guesses Left: ' + game.guessesLeft); 
+        console.log('\x1b[36m%s\x1b[0m', "Wrong guesses " + badGuess); 
         promptUser();
       }
       else{
@@ -158,28 +155,28 @@ function promptUser(){
         if(letterInWord){
          matchingLetters.push(letterGuessed);
           // display 
-          console.log("Correct!!!");
+           console.log("\x1b[32m%s\x1b[0m","Correct!!!")
           underscoreWord = new lettersDisplay(game.currentWord, matchingLetters);
           underscoreWord.setDisplay();
           // Test if the user has won
           if(underscoreWord.winner){
-            console.log("You won "+ game.currentWord + " is the word!");
+             console.log("\x1b[32m%s\x1b[0m","You won "+ game.currentWord + " is the word!")
              return;
           }
           // check for duplicate guess and propmtUser
           else{
-            console.log('Guesses Left: ' + game.guessesLeft);
-            console.log('Letters already guessed: ' + badGuess);
+            console.log('\x1b[36m%s\x1b[0m','Guesses Left: ' + game.guessesLeft);
+            console.log('\x1b[36m%s\x1b[0m','Letters already guessed: ' + badGuess);
             promptUser();
           }
         }
        // promps User and decrement guesses
         else{
-          console.log("That letter is not in the word ");
+          console.log('\x1b[31m%s\x1b[0m', 'That letter is not in the word');
           game.guessesLeft--;
           underscoreWord.setDisplay();
-          console.log('Guesses Left: ' + game.guessesLeft);
-          console.log('Letters already guessed: ' + badGuess);
+          console.log('\x1b[36m%s\x1b[0m','Guesses Left: ' + game.guessesLeft);
+          console.log('\x1b[36m%s\x1b[0m','Letters already guessed: ' + badGuess);
           promptUser();
         }
      }
@@ -187,7 +184,7 @@ function promptUser(){
   }
   // game over loss 
   else{
-    console.log("You lost! The correct word was: " + game.currentWord);
+     console.log('\x1b[31m%s\x1b[0m', 'You lost! The correct word was: '+ game.currentWord );
   }
 }
 
