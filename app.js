@@ -5,8 +5,10 @@ var fs = require("fs");
 // var Letter = require("./letter.js");
 // var Game = require("./game.js");
 // var Word = require('./word.js');
+//link to array of words 
+var  wordArray = require('./array.js');
 
-var wordArray = ["amygdala","cortex ","sagittal","chiasm ","gyrus","nerve","brain","horn","cell","occipital","axon","atlas","ataxia","dendrite","diplopia","babinski","medulla","vertigo","uncus","glia","dendrite","proprioception","neuron"];
+
 var badGuess = [];
 var matchingLetters = [];      
 var underscoreWord;
