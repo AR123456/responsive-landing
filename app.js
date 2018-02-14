@@ -142,9 +142,13 @@ function promptUser(){
       var letterGuessed = userInput.letter.toLowerCase();
         if(badGuess.indexOf(letterGuessed) != -1){
         // if a repeat letter
-        console.log('\x1b[31m%s\x1b[0m', 'You already guessed "+ letterGuessed + " . Try again!');
+        console.log(' ');
+        console.log('\x1b[31m%s\x1b[0m', "You already guessed "+ letterGuessed+ " Try again!");
+        console.log(' ');
         console.log('\x1b[36m%s\x1b[0m', 'Guesses Left: ' + game.guessesLeft); 
+        console.log(' ');
         console.log('\x1b[36m%s\x1b[0m', "Wrong guesses " + badGuess); 
+        console.log(' ');
         promptUser();
       }
       else{
@@ -155,18 +159,25 @@ function promptUser(){
         if(letterInWord){
          matchingLetters.push(letterGuessed);
           // display 
+          console.log(' ');
            console.log("\x1b[32m%s\x1b[0m","Correct!!!")
+           console.log(' ');
           underscoreWord = new lettersDisplay(game.currentWord, matchingLetters);
           underscoreWord.setDisplay();
           // Test if the user has won
           if(underscoreWord.winner){
+            console.log(' ');
              console.log("\x1b[32m%s\x1b[0m","You won "+ game.currentWord + " is the word!")
+             console.log(' ');
              return;
           }
           // check for duplicate guess and propmtUser
           else{
+            console.log(' ');
             console.log('\x1b[36m%s\x1b[0m','Guesses Left: ' + game.guessesLeft);
-            console.log('\x1b[36m%s\x1b[0m','Letters already guessed: ' + badGuess);
+            console.log(' ');
+            console.log('\x1b[36m%s\x1b[0m','Letters already guessed: ' + badGuess); console.log(' ');
+            
             promptUser();
           }
         }
