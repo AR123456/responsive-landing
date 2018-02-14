@@ -18,7 +18,7 @@
   "homepage": "https://github.com/AR123456/constructor-hangman#readme",
   "dependencies": {
     "inquirer": "^5.1.0",
-    "prompt": "^1.0.0"
+    "is-letter": "^1.1.1"
   },
   "devDependencies": {}
 }
