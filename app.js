@@ -1,27 +1,16 @@
 // Load the inquirer pacakge
 var inquirer = require("inquirer");
 var fs = require("fs");
-// var Word = require("./word.js");
-// var Letter = require("./letter.js");
-// var Game = require("./game.js");
-// var Word = require('./word.js');
+//require wor.js file 
+var lettersDisplay  = require('./word.js');
 //link to array of words 
 var  wordArray = require('./array.js');
-
-
+// Link in the letters to display
+var checkForLetter = require('./letter.js');
 var badGuess = [];
 var matchingLetters = [];      
 var underscoreWord;
 //*******functions that may belong in another file  */
-//function to check i the letter is in the word 
-function checkForLetter(letter, word){
-  // Check if the letter is in the word
-  if(word.indexOf(letter) != -1){
-     return true;
-      } else{
-    return false;
-  }
-}
 //start game get word from the array 
 var game = {
   wordArray : wordArray, //  list of words
@@ -35,13 +24,11 @@ var game = {
     var i = Math.floor(Math.random() * this.wordArray.length);
     this.currentWord = this.wordArray[i];
     //show word for testing 
-    
-    console.log("  " );
+        console.log("  " );
     console.log('\x1b[34m%s\x1b[0m',"**Help with word for testing:    " +this.currentWord); 
     console.log("________________________________________" );
     console.log("  " );
-    
-        //Display start game 
+     //Display start game 
     console.log('\x1b[33m%s\x1b[0m',"Its time to play neuro anatomy Hangman, guess a letter");
     // make the underscore word object.
     underscoreWord = new lettersDisplay(this.currentWord);
@@ -52,55 +39,6 @@ var game = {
     promptUser();
   }
 };
-//Display the letters or _ using constructor function
-var lettersDisplay = function(word, matchingLetters){
-  this.playWord = word;
-  this.goodLetters = matchingLetters;
-  this.displayText = '';
-  this.winner = false;
-  // Function takes the setDispaly object 
-  this.setDisplay = function(){
-    var shown = '';
-    //checkingletters 
-    if(this.goodLetters == undefined){
-     for(var i = 0; i < this.playWord.length; i++){
-              shown += ' _ ';
-      }
-    }
-     else{
-      //for loop through the word , then each possible correct letter
-      for(var i = 0; i < this.playWord.length; i++){
-        //   determine if letter found  
-        var letterWasFound = false;
-        for(var j = 0; j < this.goodLetters.length; j++){
-          // compare the two arrays for match 
-          if(this.playWord[i] == this.goodLetters[j]){
-            shown += this.goodLetters[j];
-            letterWasFound = true;
-          }
-        }
-        // If nothing was found
-        if(!letterWasFound){
-          shown += ' _ ';
-        }
-      }
-    }
-    // Remove first/last space and console log
-    this.displayText = shown.trim();
-    //put the display text into the console
-    console.log(' ');
-    console.log(this.displayText);
-    console.log(' ');
-    // Check to see if the game was won (user display equals the word; ie no '_' marks)
-    if(this.displayText == this.playWord){
-      this.winner = true;
-    }
-  }
-};//end of letters to display constructor ls
-
-
-
-
 ///start of game prompt 
 inquirer.prompt([
    {
@@ -120,15 +58,12 @@ inquirer.prompt([
     case "yes":
      game.startGame();
       break;
-
     case "no":
     console.log('\x1b[36m%s\x1b[0m', 'The only way to win is not to play');  
          break;
   }
 });
-
 ///prompt to get letters input 
-
 //prompt user function 
 function promptUser(){
   //put  gap between inputs
