@@ -7,14 +7,21 @@ var fs = require("fs");
 // var Word = require('./word.js');
 //link to array of words 
 var  wordArray = require('./array.js');
-// Link in the letters to display
-var checkForLetter = require('./letter.js');
+
 
 var badGuess = [];
 var matchingLetters = [];      
 var underscoreWord;
 //*******functions that may belong in another file  */
-
+//function to check i the letter is in the word 
+function checkForLetter(letter, word){
+  // Check if the letter is in the word
+  if(word.indexOf(letter) != -1){
+     return true;
+      } else{
+    return false;
+  }
+}
 //start game get word from the array 
 var game = {
   wordArray : wordArray, //  list of words
@@ -45,7 +52,7 @@ var game = {
     promptUser();
   }
 };
-//Display the letters or _ using constructor function this is the for the word file 
+//Display the letters or _ using constructor function
 var lettersDisplay = function(word, matchingLetters){
   this.playWord = word;
   this.goodLetters = matchingLetters;
@@ -115,7 +122,7 @@ inquirer.prompt([
       break;
 
     case "no":
-    console.log('\x1b[36m%s\x1b[0m', 'The only way to win is not to play !');  
+    console.log('\x1b[36m%s\x1b[0m', 'The only way to win is not to play');  
          break;
   }
 });
