@@ -1,6 +1,8 @@
 // Load the inquirer pacakge
 var inquirer = require("inquirer");
 var fs = require("fs");
+// Link in the letters to display
+var checkForLetter = require('./letter.js');
 //require wor.js file 
 var lettersDisplay  = require('./word.js');
 //link to array of words 
@@ -10,7 +12,7 @@ var checkForLetter = require('./letter.js');
 var badGuess = [];
 var matchingLetters = [];      
 var underscoreWord;
-//*******functions that may belong in another file  */
+
 //start game get word from the array 
 var game = {
   wordArray : wordArray, //  list of words
@@ -25,7 +27,7 @@ var game = {
     this.currentWord = this.wordArray[i];
     //show word for testing 
         console.log("  " );
-    console.log('\x1b[34m%s\x1b[0m',"**Help with word for testing:    " +this.currentWord); 
+    console.log('\x1b[34m%s\x1b[0m',"****Help with word for testing:    " +this.currentWord); 
     console.log("________________________________________" );
     console.log("  " );
      //Display start game 

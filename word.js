@@ -11,25 +11,32 @@ var lettersDisplay = function(word, matchingLetters){
       var shown = '';
       //checkingletters 
       if(this.goodLetters == undefined){
+        //loop through the selected word and put underscores in console
        for(var i = 0; i < this.playWord.length; i++){
                 shown += ' _ ';
-        }
+            // console.log("The underscores: " +shown);
+            }
       }
        else{
         //for loop through the word , then each possible correct letter
         for(var i = 0; i < this.playWord.length; i++){
           //   determine if letter found  
+          // console.log("First loop : " + this.playWord)
           var letterWasFound = false;
-          for(var j = 0; j < this.goodLetters.length; j++){
-            // compare the two arrays for match 
-            if(this.playWord[i] == this.goodLetters[j]){
+              for(var j = 0; j < this.goodLetters.length; j++){
+               // compare the two arrays for match 
+              //  console.log("Second loop : "+ this.goodLetters);
+               
+              if(this.playWord[i] == this.goodLetters[j]){
               shown += this.goodLetters[j];
               letterWasFound = true;
-            }
+              }
           }
           // If nothing was found
           if(!letterWasFound){
             shown += ' _ ';
+            // console.log("Show _ if letter not found :   " + shown);
+            
           }
         }
       }
