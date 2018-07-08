@@ -21,13 +21,12 @@ var lettersDisplay = function(word, matchingLetters){
         //for loop through the word , then each possible correct letter
         for(var i = 0; i < this.playWord.length; i++){
           //   determine if letter found  
-          // console.log("First loop : " + this.playWord)
+           //console.log("First loop : " + this.playWord)
           var letterWasFound = false;
               for(var j = 0; j < this.goodLetters.length; j++){
                // compare the two arrays for match 
-              //  console.log("Second loop : "+ this.goodLetters);
-               
-              if(this.playWord[i] == this.goodLetters[j]){
+             // console.log("Second loop good.letters   : "+ this.goodLetters);
+            if(this.playWord[i] == this.goodLetters[j]){
               shown += this.goodLetters[j];
               letterWasFound = true;
               }
