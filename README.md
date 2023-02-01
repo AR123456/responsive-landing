@@ -1,3 +1,2 @@
-# constructor-hangman from the CLI
-
-# Inputs using Inquire NPM
+# using CSS no framework to make a responsive landing page
+ 
