@@ -1,2 +1,2 @@
-# using CSS no framework to make a responsive landing page
+# Using CSS no framework to make a responsive landing page
  
