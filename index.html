@@ -16,7 +16,7 @@
       <div class="container">
         <a href="#"><img src="./images/logo.svg" alt="Manage" /></a>
         <nav class="primary-navigation">
-          <ul role="list" class="nav-list">
+          <ul aria-label="Primary" role="list" class="nav-list">
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Product</a></li>
             <li><a href="#">About Us</a></li>
@@ -92,7 +92,62 @@
           </div>
         </div>
       </section>
+      <section class="carousel">
+        <h2 class="fs-secondary-heading">What they've said</h2>
+        <!-- Carousel here -->
+        <button class="button">Get Started</button>
+      </section>
+      <section class="cta | bg-primary-400 text-neutral-100">
+        <div class="container">
+          <div class="even-columns">
+            <div>
+              <p class="fs-secondary-heading fw-bold">
+                Simplify how your team works today.
+              </p>
+            </div>
+            <div>
+              <button class="button" data-type="inverted">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer class="bg-neutral-900 text-neutral-100">
+      <div class="container">
+        <div class="even-columns">
+          <div>
+            <a href="#"><img src="images/logo.svg" alt="Manage" /></a>
+            <ul role="list" aria-label="Social links">
+              <li><a aria-label="facebook" href="#"></a></li>
+              <li><a aria-label="youtube" href="#"></a></li>
+              <li><a aria-label="twitter" href="#"></a></li>
+              <li><a aria-label="pinterest" href="#"></a></li>
+              <li><a aria-label="instagram" href="#"></a></li>
+            </ul>
+          </div>
+          <div>
+            <nav class="footer-nav">
+              <ul aria-label="Footer" role="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <form action="">
+              <input type="email" />
+              <button class="button">Go</button>
+              <p>Copyright 2020. All Rights Reserved</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
