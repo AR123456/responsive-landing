@@ -265,6 +265,8 @@ p[data-width="wide"] {
   color: var(--clr-accent-400);
   text-decoration: none;
 }
+.social-list {
+}
 
 /* cta */
 
