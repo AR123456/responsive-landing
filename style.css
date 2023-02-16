@@ -256,8 +256,8 @@ p[data-width="wide"] {
 .primary-footer {
   --logo-color: var(--clr-neutral-100);
 }
-.primary-footer > * {
-  margin-inline: auto;
+.primary-footer > * > * > * {
+  outline: 2px solid red;
 }
 
 .footer-nav {
