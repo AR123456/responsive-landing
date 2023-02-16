@@ -269,6 +269,7 @@ p[data-width="wide"] {
   color: var(--clr-accent-400);
   text-decoration: none;
 }
+/* social list  */
 .social-list {
   display: flex;
   gap: var(--size-300);
@@ -281,8 +282,12 @@ p[data-width="wide"] {
 .social-list a:is(:hover, :focus) .social-icon {
   fill: var(--clr-accent-400);
 }
-
+/* small scree */
 @media (min-width: 50em) {
+  .social-list {
+    display: flex;
+    gap: var(--size-300);
+  }
   .social-icon {
     width: var(--size-500);
   }
