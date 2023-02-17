@@ -256,6 +256,7 @@ p[data-width="wide"] {
 .primary-footer {
   --logo-color: var(--clr-neutral-100);
 }
+/* TODO this is doing nothing  */
 .primary-footer .even-columns {
   justify-content: center;
 }
