@@ -256,11 +256,9 @@ p[data-width="wide"] {
 .primary-footer {
   --logo-color: var(--clr-neutral-100);
 }
-.primary-footer .even-columns > * {
-  outline: 2px solid red;
-  margin-inline: auto;
+.primary-footer .even-columns {
+  justify-content: center;
 }
-
 .footer-nav {
   columns: 2;
 }
