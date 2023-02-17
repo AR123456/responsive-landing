@@ -256,9 +256,15 @@ p[data-width="wide"] {
 .primary-footer {
   --logo-color: var(--clr-neutral-100);
 }
-/* TODO this is doing nothing  */
-.primary-footer .even-columns {
-  justify-content: center;
+
+.primary-footer-wrapper {
+  display: grid;
+  grid-template-areas: "form" "nav" "logo-social";
+}
+
+.primary-footer-wrapper > * {
+  outline: 2px solid red;
+  margin-inline: auto;
 }
 .footer-nav {
   columns: 2;
