@@ -258,6 +258,7 @@ p[data-width="wide"] {
 }
 .primary-footer > * > * > * {
   outline: 2px solid red;
+  margin-inline: auto;
 }
 
 .footer-nav {
