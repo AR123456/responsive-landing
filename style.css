@@ -276,9 +276,12 @@ p[data-width="wide"] {
 .primary-footer-wrapper > :nth-child(3) {
   grid-area: form;
 }
-.primary-footer-wrapper > * {
-  margin-inline: auto;
+@media (max-width: 50em) {
+  .primary-footer-wrapper > * {
+    margin-inline: auto;
+  }
 }
+
 .footer-nav {
   columns: 2;
 }
