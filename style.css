@@ -269,6 +269,10 @@ p[data-width="wide"] {
 }
 .primary-footer-logo-social {
   grid-area: logo-social;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: var(--size-700);
 }
 .primary-footer-nav {
   grid-area: nav;
