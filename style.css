@@ -259,22 +259,24 @@ p[data-width="wide"] {
 
 .primary-footer-wrapper {
   display: grid;
+  gap: var(--size-900);
   grid-template-areas: "form" "nav" "logo-social";
+}
+@media (min-width: 50em) {
+  .primary-footer-wrapper {
+    grid-template-areas: "logo-social nav form";
+  }
 }
 .primary-footer-wrapper > :nth-child(1) {
   grid-area: logo-social;
-  background-color: purple;
 }
 .primary-footer-wrapper > :nth-child(2) {
   grid-area: nav;
-  background-color: rgb(0, 128, 41);
 }
 .primary-footer-wrapper > :nth-child(3) {
   grid-area: form;
-  background-color: rgb(100, 128, 0);
 }
 .primary-footer-wrapper > * {
-  outline: 2px solid red;
   margin-inline: auto;
 }
 .footer-nav {
