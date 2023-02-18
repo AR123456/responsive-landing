@@ -284,6 +284,11 @@ p[data-width="wide"] {
   .primary-footer-wrapper > * {
     margin-inline: auto;
   }
+  .primary-footer-logo-social {
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--size-700);
+  }
 }
 
 .footer-nav {
