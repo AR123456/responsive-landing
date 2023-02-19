@@ -389,6 +389,14 @@ input:where([type="text"], [type="email"], ) {
   opacity: 0.1;
 }
 
+/* numbered items  */
+.numbered-items {
+  list-style: decimal !important;
+}
+.numbered-items ::marker {
+  color: red;
+}
+
 /* Utility classes */
 
 .visually-hidden {
