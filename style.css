@@ -293,6 +293,7 @@ p[data-width="wide"] {
 
 .footer-nav {
   columns: 2;
+  gap: clamp(var(--size-200), 30vw, var(--size-900));
 }
 
 .footer-nav a {
