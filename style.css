@@ -156,6 +156,7 @@ p[data-width="wide"] {
   background-color: var(--clr-neutral-100);
   color: var(--clr-accent-400);
 }
+
 .button[data-shadow="none"] {
   box-shadow: none;
 }
@@ -255,58 +256,72 @@ p[data-width="wide"] {
     display: none;
   }
 }
-/* footer  */
+
+/* footer */
+
 .primary-footer {
   --logo-color: var(--clr-neutral-100);
 }
 
 .primary-footer-wrapper {
   display: grid;
-  gap: var(--size-900);
-  grid-template-areas: "form" "nav" "logo-social";
+  gap: var(--size-700);
+  grid-template-areas:
+    "form"
+    "nav"
+    "logo-social";
 }
-@media (min-width: 50em) {
-  .primary-footer-wrapper {
-    grid-template-areas: "logo-social nav form";
-  }
-}
+
 .primary-footer-logo-social {
   grid-area: logo-social;
+
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   gap: var(--size-700);
 }
+
 .primary-footer-nav {
   grid-area: nav;
 }
+
 .primary-footer-form {
   grid-area: form;
+
   display: grid;
   align-content: space-between;
 }
+
 .primary-footer form {
   display: flex;
   gap: var(--size-200);
 }
-.primary-footer-form input {
-  border-radius: 100vw;
-}
+
 input:where([type="text"], [type="email"], ) {
   border-radius: 100vw;
   border: 0;
   padding: var(--size-300) var(--size-400);
 }
-@media (max-width: 50em) {
-  .primary-footer-wrapper > * {
-    margin-inline: auto;
+
+@media (min-width: 50em) {
+  .primary-footer-wrapper {
+    grid-template-areas: "logo-social nav form";
   }
+
   .primary-footer-logo-social {
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--size-700);
   }
 }
+
+@media (max-width: 50em) {
+  .primary-footer-wrapper > * {
+    margin-inline: auto;
+  }
+}
+
+/* footer navigation */
 
 .footer-nav {
   columns: 2;
@@ -317,33 +332,37 @@ input:where([type="text"], [type="email"], ) {
   color: var(--clr-neutral-100);
   text-decoration: none;
 }
+
 .footer-nav a:is(:hover, :focus) {
   color: var(--clr-accent-400);
-  text-decoration: none;
 }
-/* social list  */
+
+/* social list */
+
 .social-list {
   display: flex;
   gap: var(--size-600);
 }
+
 .social-icon {
   width: var(--size-600);
   aspect-ratio: 1;
   fill: var(--clr-neutral-100);
 }
+
 .social-list a:is(:hover, :focus) .social-icon {
   fill: var(--clr-accent-400);
 }
-/* small scree */
+
 @media (min-width: 50em) {
   .social-list {
-    display: flex;
     gap: var(--size-300);
   }
   .social-icon {
     width: var(--size-500);
   }
 }
+
 /* cta */
 
 .cta {
