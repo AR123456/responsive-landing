@@ -398,10 +398,18 @@ input:where([type="text"], [type="email"], ) {
 }
 .numbered-items div {
   display: grid;
+  align-self: center;
+  column-gap: var(--size-400);
   grid-template-columns: min-content 1fr;
 }
 .numbered-items p {
   grid-column: 1/-1;
+}
+/* taking care of width  */
+@media (min-width: 30em) {
+  .numbered-items p {
+    grid-column: 2/-1;
+  }
 }
 .numbered-items div::before {
   content: "0" counter(count);
