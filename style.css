@@ -400,6 +400,9 @@ input:where([type="text"], [type="email"], ) {
   display: grid;
   grid-template-columns: min-content 1fr;
 }
+.numbered-items p {
+  grid-column: 1/-1;
+}
 .numbered-items div::before {
   content: "0" counter(count);
   background-color: var(--clr-accent-400);
