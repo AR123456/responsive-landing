@@ -391,10 +391,13 @@ input:where([type="text"], [type="email"], ) {
 
 /* numbered items  */
 .numbered-items {
-  list-style: decimal !important;
+  counter-reset: count;
 }
-.numbered-items ::marker {
-  color: red;
+.numbered-items li {
+  counter-increment: count;
+}
+.numbered-items li::before {
+  content: counter(count);
 }
 
 /* Utility classes */
