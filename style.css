@@ -396,7 +396,11 @@ input:where([type="text"], [type="email"], ) {
 .numbered-items li {
   counter-increment: count;
 }
-.numbered-items li::before {
+.numbered-items div {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+.numbered-items div::before {
   content: "0" counter(count);
   background-color: var(--clr-accent-400);
   color: var(--clr-neutral-100);
