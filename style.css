@@ -402,6 +402,9 @@ input:where([type="text"], [type="email"], ) {
   column-gap: var(--size-400);
   grid-template-columns: min-content 1fr;
 }
+.numbered-items__title {
+  background: orange;
+}
 .numbered-items p {
   grid-column: 1/-1;
 }
