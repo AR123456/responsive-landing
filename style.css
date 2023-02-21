@@ -403,17 +403,7 @@ input:where([type="text"], [type="email"], ) {
   column-gap: var(--size-300);
   grid-template-columns: min-content 1fr;
 }
-.numbered-items__title::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  border-radius: 100vw;
 
-  inset: 0 -100vw 0 0;
-  grid-column: 1/2;
-  grid-row: 1/2;
-  background: orange;
-}
 .numbered-items__body {
   grid-column: 1/-1;
 }
@@ -434,7 +424,19 @@ input:where([type="text"], [type="email"], ) {
   height: 40px;
   border-radius: 100vw;
 }
+.numbered-items div::after {
+  content: "";
+  display: block;
+  z-index: -1;
+  border-radius: 100vw;
 
+  inset: 0 -100vw 0 0;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  height: 40px;
+  /* width: 100%; */
+  background: orange;
+}
 /* Utility classes */
 
 .visually-hidden {
