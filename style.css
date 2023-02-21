@@ -403,9 +403,14 @@ input:where([type="text"], [type="email"], ) {
   column-gap: var(--size-300);
   grid-template-columns: min-content 1fr;
 }
+.numbered-items__title {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  line-height: 1;
+}
 
 .numbered-items__body {
-  grid-column: 1/-1;
+  grid-column: 1 / -1;
 }
 /* taking care of width  */
 @media (min-width: 30em) {
@@ -423,6 +428,8 @@ input:where([type="text"], [type="email"], ) {
   padding: 0 var(--size-500);
   height: 40px;
   border-radius: 100vw;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
 }
 .numbered-items div::after {
   content: "";
