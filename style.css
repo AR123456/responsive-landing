@@ -464,6 +464,7 @@ input:where([type="text"], [type="email"], ) {
 
 .container {
   --max-width: 1110px;
+  /* an new var  */
   --container-padding: 1rem;
 
   width: min(var(--max-width), 100% - (var(--container-padding) * 2));
