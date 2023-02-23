@@ -448,13 +448,22 @@ input:where([type="text"], [type="email"], ) {
   }
 }
 /* slider  */
+
 .slider {
   display: flex;
+  gap: var(--size-600);
+  list-style: none;
+}
+
+.a11y-slider-container {
+  margin-block: var(--size-700);
+  margin-inline: var(--size-400);
 }
 
 .slider > * {
-  width: 100%;
+  position: relative;
   flex: 0 0 auto;
+  width: 100%;
 }
 
 /* Utility classes */
