@@ -538,7 +538,7 @@ input:where([type="text"], [type="email"], ) {
 .a11y-slider-dots li button.active {
   background: var(--clr-accent-400);
 }
-/* image with blob bg */
+/* hero image */
 
 @media (max-width: 47em) {
   .hero__image {
@@ -551,6 +551,7 @@ input:where([type="text"], [type="email"], ) {
   position: absolute;
   z-index: -1;
   right: 0;
+  top: 0;
   width: 87%;
   max-height: 70vh;
 
@@ -566,6 +567,20 @@ input:where([type="text"], [type="email"], ) {
     width: 48%;
   }
 }
+/* sales points  */
+.sales-points {
+  position: relative;
+}
+.sales-points::before {
+  /* bringing in the image in content in this case  */
+  content: url("./images/bg-tablet-pattern.svg");
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 85%;
+  width: 100px;
+}
+
 /* Utility classes */
 
 .visually-hidden {
