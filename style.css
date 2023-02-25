@@ -210,6 +210,10 @@ p[data-width="wide"] {
 }
 
 @media (max-width: 47em) {
+  .primary-header[data-overlay] {
+    position: relative;
+    z-index: 999;
+  }
   .primary-navigation {
     display: none;
 
@@ -217,6 +221,7 @@ p[data-width="wide"] {
     padding: var(--size-700);
     inset: 7rem var(--size-400) auto;
     max-width: 25rem;
+    margin-inline: auto;
     margin-left: auto;
     background: var(--clr-neutral-100);
     border-radius: var(--size-100);
@@ -226,6 +231,7 @@ p[data-width="wide"] {
   .primary-header[data-overlay]::before {
     content: "";
     position: fixed;
+
     inset: 0;
     /* height: 100vh; */
     background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
