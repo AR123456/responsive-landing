@@ -277,9 +277,10 @@ p[data-width="wide"] {
   --logo-color: var(--clr-neutral-100);
 }
 
-.primary-footer-wrapper {
+.primary-footer__wrapper {
   display: grid;
   gap: var(--size-700);
+  justify-content: center;
   grid-template-areas:
     "form"
     "nav"
@@ -296,23 +297,30 @@ p[data-width="wide"] {
   align-items: center;
   gap: var(--size-700);
 } */
-.primary-footer-logo {
+.primary-footer__logo {
   grid-area: logo;
 }
-.primary-footer-nav {
+.primary-footer__nav {
   grid-area: nav;
 }
+.primary-footer__form {
+  grid-area: form;
+}
 
-.primary-footer-form {
+.primary-footer__form {
   grid-area: form;
 
-  display: grid;
-  align-content: space-between;
+  display: flex;
+  gap: var(--size-200);
+}
+.primary-footer__copyright {
+  grid-area: copyright;
+  opacity: 0.5;
 }
 
 .primary-footer form {
-  display: flex;
-  gap: var(--size-200);
+  /* display: flex;
+  gap: var(--size-200); */
 }
 
 input:where([type="text"], [type="email"], ) {
